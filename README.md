@@ -3,15 +3,37 @@
 #### 项目介绍
 Linux(debian8\centos7\ubantu16)一键安装Aria2 + Caddy + YAAW实现离线下载。
 
-#### 软件架构
-软件架构说明
+#### 功能说明
+1.离线下载
+2.在线查看
+3.文件管理
+
+#### 环境要求
+1.支持Linux(debian8+\centos7+\ubantu16+)
+2.不支持32位系统
 
 
 #### 安装教程
 
-1. xxxx
-2. xxxx
-3. xxxx
+#Centos用户
+yum -y install wget unzip
+#如果是Debian or Ubuntu用户
+apt-get install -y wget unzip
+#下面的命令通用，直接复制
+wget https://gitee.com/xyzbeta/aria2/repository/archive/master.zip
+unzip xyzbeta-aria2-master.zip && cd xyzbeta-aria2-master/aria2 && chmod u+x *.sh && ./install_aria2.sh
+
+### 相关文件路径
+
+#Caddy server配置文件
+/data/aria2/caddy.conf
+#Aria2配置文件
+/data/aria2/aria2.conf
+#离线下载目录
+/data/aria2/download
+#日志目录
+/data/aria2/aria2.log
+/data/aria2/caddy.log
 
 #### 使用说明
 
@@ -19,19 +41,6 @@ Linux(debian8\centos7\ubantu16)一键安装Aria2 + Caddy + YAAW实现离线下�
 2. xxxx
 3. xxxx
 
-#### 参与贡献
+#### 特别感谢
 
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
-
-
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [http://git.mydoc.io/](http://git.mydoc.io/)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1. https://www.xiaoz.me
