@@ -4,37 +4,38 @@
 Linux(debian8\centos7\ubantu16)一键安装Aria2 + Caddy + YAAW实现离线下载。
 
 #### 功能说明
-1.离线下载
-2.在线查看
-3.文件管理
 
+- 1.离线下载
+- 2.在线查看
+- 3.文件管理
+ 
 #### 环境要求
-1.支持Linux(debian8+\centos7+\ubantu16+)
-2.不支持32位系统
+
+- 1.支持Linux(debian8+\centos7+\ubantu16+)
+- 2.不支持32位系统
 
 
 #### 安装教程
 
-#Centos用户
-yum -y install wget unzip
-#如果是Debian or Ubuntu用户
-apt-get install -y wget unzip
-#下面的命令通用，直接复制
-wget https://gitee.com/xyzbeta/aria2/repository/archive/master.zip
-unzip xyzbeta-aria2-master.zip && cd xyzbeta-aria2-master/aria2 && chmod u+x *.sh && ./install_aria2.sh
+- #Centos用户
+- yum -y install wget unzip
+- #如果是Debian or Ubuntu用户
+- apt-get install -y wget unzip
+- #下面的命令通用，直接复制
+- wget https://gitee.com/xyzbeta/aria2/repository/archive/master.zip unzip xyzbeta-aria2-master.zip && cd xyzbeta-aria2-master/aria2 && chmod u+x *.sh && ./install_aria2.sh
 
 ### 相关文件路径
 
-#Caddy server配置文件
-/data/aria2/caddy.conf
-#Aria2配置文件
-/data/aria2/aria2.conf
-#离线下载目录
-/data/aria2/download
-#日志目录
-/data/aria2/aria2.log
-/data/aria2/caddy.log
-
+- #Caddy server配置文件
+- /data/aria2/caddy.conf
+- #Aria2配置文件
+- /data/aria2/aria2.conf
+- #离线下载目录
+- /data/aria2/download
+- #日志目录
+- /data/aria2/aria2.log
+- /data/aria2/caddy.log
+- 
 #### 使用说明
 
 1. xxxx
