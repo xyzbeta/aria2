@@ -26,20 +26,20 @@ Linux(debian8\centos7\ubantu16)一键安装Aria2 + Caddy + YAAW实现离线下�
 
 ### 相关命令
 - #运行/重启/停止/查看状态
-./aria2.sh
+- ./aria2.sh
 - #Caddy server配置文件
-/data/aria2/caddy.conf
+- /data/aria2/caddy.conf
 - #Aria2配置文件
-/data/aria2/aria2.conf
+- /data/aria2/aria2.conf
 - #离线下载目录
-/data/aria2/download
+- /data/aria2/download
 - #日志目录
-/data/aria2/aria2.log
-/data/aria2/caddy.log
+- /data/aria2/aria2.log
+- /data/aria2/caddy.log
 - #一键安装
-./install_aria2.sh
+- ./install_aria2.sh
 - #一键卸载
-./uninstall.sh
+- ./uninstall.sh
 
 #### 使用说明
 
