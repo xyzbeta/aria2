@@ -83,6 +83,7 @@ function updateSource(){
 #自动放行端口
 function chk_firewall() {
 	if [[ ${release} == "centos" ]]; then
+		echo -e "${Info}"
 		firewall-cmd --zone=public --add-port=6080/tcp --permanent
 		firewall-cmd --zone=public --add-port=6800/tcp --permanent
 		firewall-cmd --zone=public --add-port=51413/tcp --permanent
@@ -109,9 +110,9 @@ function setting(){
 	mkdir -p /data/aria2/download
 	touch /data/aria2/aria2.session
 	cp aria2.conf caddy.conf aria2.sh /data/aria2
-	read -p "${Info}设置用户名：" user
-	read -p "${Info}设置密码：" pass
-	read -p "${Info}设置连接口令" token
+	echo -e "${Info}设置用户名：\c" && read user
+	echo -e "${Info}设置密码：\c"  && read pass
+	echo -e "${Info}设置连接口令\c"  && read token
 	sed -i "s/rpc-secret=/rpc-secret=${token}/g" /data/aria2/aria2.conf
 	#sed -i "s/#rpc-user=/rpc-user=${user}/g" /data/aria2/aria2.conf
 	#sed -i "s/#rpc-passwd=/rpc-passwd=${pass}/g" /data/aria2/aria2.conf
@@ -125,6 +126,7 @@ function setting(){
 	sed -i "s/password/${pass}/g" /data/aria2/caddy.conf
 	#放行端口
 	if [[ "${release}" == "centos" ]]; then
+		echo -e "${Info}放行6080、6800、51413端口"
 		chk_firewall
 	fi
 	#启动服务
@@ -132,11 +134,11 @@ function setting(){
 	nohup aria2c --conf-path=/data/aria2/aria2.conf > /data/aria2/aria2.log 2>&1 &
 	nohup caddy -conf="/data/aria2/caddy.conf" > /data/aria2/caddy.log 2>&1 &
 	echo "------------------安装完成，请牢记以下信息。------------------"
-	echo "${Info}访问地址：http://${osip}:6080"
-	echo "${Info}用户名：${user}"
-	echo "${Info}密码：${pass}"
-	echo "${Info}RPC地址：http://token:${token}@$1:6800/jsonrpc"
-	echo "${Tip}需要帮助请访问：https://www.xyzbeta.com/"
+	echo -e "${Info}访问地址：http://${osip}:6080"
+	echo -e "${Info}用户名：${user}"
+	echo -e "${Info}密码：${pass}"
+	echo -e "${Info}RPC地址：http://token:${token}@$1:6800/jsonrpc"
+	echo -e "${Tip}需要帮助请访问：https://www.xyzbeta.com/"
 	echo "---------------------------------------------------------------"
 	#清理安装产生的垃圾文件
 	#rm -rf /data/aria2/*.zip
@@ -154,8 +156,8 @@ echo -e "\n———————————————一键安装Aria2 + Yaaw
 ——Blog: https://www.xyzbeta.com
 ---------------------------------------------------\n
 ${Tip}本脚本只支持ubantu16/debian8/centos7及以上版本安装，不对低版本进行兼容，使用时请注意。"
-read -p "${Info}请对照你的系统版本，如果继续请输入(y/Y):" tag
-if [[ "${tag}" != "y" || "${tag}" != "Y" ]]; then
+echo -e "${Info}请对照你的系统版本，如果继续请输入(y/Y):\c" && read tag
+if [[ "${tag}" != "y" && "${tag}" != "Y" ]]; then
 	exit 1
 fi
 echo -e "${Info}开始一键安装Aria2 + Yaaw...."

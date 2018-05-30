@@ -11,8 +11,6 @@ function uninstall(){
 	#删除端口
 	firewall-cmd --zone=public --remove-port=6080/tcp --permanent
 	firewall-cmd --zone=public --remove-port=6800/tcp --permanent
-	sed -i '/^.*6080.*/'d /etc/sysconfig/iptables
-	sed -i '/^.*6800.*/'d /etc/sysconfig/iptables
 }
 
 echo '------------------------------------'
