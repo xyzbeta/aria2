@@ -115,13 +115,10 @@ function setting(){
 	sed -i "s/rpc-secret=/rpc-secret=${token}/g" /data/aria2/aria2.conf
 	#sed -i "s/#rpc-user=/rpc-user=${user}/g" /data/aria2/aria2.conf
 	#sed -i "s/#rpc-passwd=/rpc-passwd=${pass}/g" /data/aria2/aria2.conf
-	#下载yaaw
-	wget -P /data/aria2 http://198.13.47.71:6080/admin/share/45c123bec33048bf727dc14e4a7448fac6ecbe6ad071da2f7b18ba5e927d5b3b?dl=1
-	cd /data/aria2
-	unzip master.zip
-	mv yaaw-master/* ./
-	#下载caddy server
-	wget http://198.13.47.71:6080/admin/share/db1f2467e939740af7b8641461530c2634598638552bfb22f03ee5f65dfe60cd?dl=1 -O caddy && mv caddy /usr/bin/
+	#移动yaaw
+	mv yaaw/* /data/aria2
+	#移动caddy
+	mv caddy/caddy.filemanager /usr/bin/caddy
 	chmod +x /usr/bin/caddy
 	#修改配置
 	sed -i "s/username/${user}/g" /data/aria2/caddy.conf
@@ -142,11 +139,11 @@ function setting(){
 	echo "${Tip}需要帮助请访问：https://www.xyzbeta.com/"
 	echo "---------------------------------------------------------------"
 	#清理安装产生的垃圾文件
-	rm -rf /data/aria2/*.zip
-	rm -rf /data/aria2/*.tar.gz
-	rm -rf /data/aria2/*.txt
-	rm -rf /data/aria2/*.md
-	rm -rf /data/aria2/yaaw-*
+	#rm -rf /data/aria2/*.zip
+	#rm -rf /data/aria2/*.tar.gz
+	#rm -rf /data/aria2/*.txt
+	#rm -rf /data/aria2/*.md
+	#rm -rf /data/aria2/yaaw-*
 }
 
 ########################业务流程执行入口#########################
