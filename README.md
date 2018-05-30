@@ -18,9 +18,9 @@ Linux(debian8\centos7\ubantu16)一键安装Aria2 + Caddy + YAAW实现离线下�
 #### 安装教程
 
 - #Centos用户
-- yum -y install wget unzip
+- yum -y install unzip
 - #如果是Debian or Ubuntu用户
-- apt-get install -y wget unzip
+- apt-get install -y unzip
 - #下面的命令通用，直接复制
 - wget https://github.com/xyzbeta/aria2/archive/master.zip && unzip master.zip && cd aria2-master && chmod u+x *.sh && ./install_aria2.sh
 
