@@ -1,7 +1,12 @@
 #!/bin/bash
-#####		卸载LACY	#####
-#####		Author:xiaoz.me			#####
-#####		Update:2017-12-10		#####
+#=================================================
+#	System Required: CentOS 7+/Debian 8+/Ubuntu 16+
+#	Description: 一键卸载Aria2
+#	Version: 1.0
+#	Author: XyzBeta
+#	Blog: https://www.xyzbeta.com
+#	Update: 2018/5/25
+#=================================================
 
 function uninstall(){
 	#关闭服务
@@ -11,6 +16,8 @@ function uninstall(){
 	#删除端口
 	firewall-cmd --zone=public --remove-port=6080/tcp --permanent
 	firewall-cmd --zone=public --remove-port=6800/tcp --permanent
+	firewall-cmd --zone=public --remove-port=51413/tcp --permanent
+	firewall-cmd --reload
 }
 
 echo '------------------------------------'
