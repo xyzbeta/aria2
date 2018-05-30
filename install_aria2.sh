@@ -83,7 +83,6 @@ function updateSource(){
 #自动放行端口
 function chk_firewall() {
 	if [[ ${release} == "centos" ]]; then
-		echo -e "${Info}"
 		firewall-cmd --zone=public --add-port=6080/tcp --permanent
 		firewall-cmd --zone=public --add-port=6800/tcp --permanent
 		firewall-cmd --zone=public --add-port=51413/tcp --permanent
@@ -110,9 +109,9 @@ function setting(){
 	mkdir -p /data/aria2/download
 	touch /data/aria2/aria2.session
 	cp aria2.conf caddy.conf aria2.sh /data/aria2
-	echo -e "${Info}设置用户名：\c" && read user
-	echo -e "${Info}设置密码：\c"  && read pass
-	echo -e "${Info}设置连接口令\c"  && read token
+	echo -e "${Info}设置用户名:\c" && read user
+	echo -e "${Info}设置密码:\c"  && read pass
+	echo -e "${Info}设置连接口令:\c"  && read token
 	sed -i "s/rpc-secret=/rpc-secret=${token}/g" /data/aria2/aria2.conf
 	#sed -i "s/#rpc-user=/rpc-user=${user}/g" /data/aria2/aria2.conf
 	#sed -i "s/#rpc-passwd=/rpc-passwd=${pass}/g" /data/aria2/aria2.conf
