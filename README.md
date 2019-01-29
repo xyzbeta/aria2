@@ -1,7 +1,7 @@
 # aria2
 
 ## 项目介绍
-Linux(debian8\centos7\ubantu16)一键安装Aria2 + Caddy + YAAW实现离线下载。
+Linux(debian8\centos7\ubantu16)一键安装Aria2 + Caddy + AriaNg实现离线下载。
 
 ## 功能说明
 
@@ -22,15 +22,15 @@ Linux(debian8\centos7\ubantu16)一键安装Aria2 + Caddy + YAAW实现离线下�
 ### 如果是Debian or Ubuntu用户
  apt-get install -y unzip
 ### 下面的命令通用，直接复制
- wget https://github.com/xyzbeta/aria2/archive/master.zip && unzip master.zip && cd aria2-master && chmod u+x *.sh && ./install_aria2.sh
+ wget https://github.com/xyzbeta/aria2/archive/master.zip && unzip master.zip && cd aria2-master && chmod u+x *.sh && ./laac.sh
 
 ## 相关命令
 #### 运行/重启/停止/查看状态
- ./aria2.sh
+ ./laac.sh
 #### 一键安装
- ./install_aria2.sh
+ ./laac.sh
 #### 一键卸载
-./uninstall.sh
+./laac.sh
 #### Caddy server配置文件
  /data/aria2/caddy.conf
 #### Aria2配置文件
