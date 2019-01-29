@@ -137,7 +137,7 @@ function setting(){
 	mkdir -p /data/aria2
 	mkdir -p /data/aria2/download
 	touch /data/aria2/aria2.session
-	cp aria2.conf caddy.conf aria2.sh /data/aria2
+	cp aria2.conf caddy.conf laac.sh /data/aria2
 	echo -e "${Info}设置用户名:\c" && read user
 	echo -e "${Info}设置密码:\c"  && read pass
 	echo -e "${Info}设置连接口令:\c"  && read token
